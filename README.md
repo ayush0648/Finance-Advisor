@@ -1,12 +1,11 @@
 # Finance-Advisor
-Finance Advisor is an 
-application that provides users with a suggested amount they should spend on various expenses based on their city, card type, and expense type. The application leverages a machine learning model trained on a dataset of recorded expenditures to make predictions.
+
+This project implements a financial advisory system that predicts suggested amounts for expenses based on user inputs using machine learning. It includes two main components: a model training script and a web-based interface to interact with the trained model.
 
 **Features**
 
-- Predicts the suggested spending amount based on user input
-- Uses a neural network model for predictions
-- Flask-based API for easy interaction with the model
+- Model Training: Trains a machine learning model on historical credit card spending data to predict suggested expense amounts based on city, card type, and expense type.
+- Persistence: Uses joblib to save and load the trained model for efficient prediction.
 
 **Installation**
 
@@ -17,29 +16,25 @@ application that provides users with a suggested amount they should spend on var
 
 **Clone the Repository**
 
-git clone https://github.com/ayush0648/finance-advisor.git
-cd finance-advisor
+git clone https://github.com/ayush0648/Finance-Advisor.git
+cd Finance-Advisor
 
 **Install Required Libraries**
 
 pip install -r requirements.txt
 
 **Usage**
-**Start the Flask Application**
 
-python finance_advisor.py
+**Train the Model**
 
-**Predictions**
+python model.py
 
-Use a curl command on your powershell command line. Here's an example you can copy and paste:
-Invoke-WebRequest -Uri "http://127.0.0.1:5000/predict" `
-    -Method POST `
-    -ContentType "application/json" `
-    -Body '{"City": "Greater Mumbai", "Card Type": "Gold", "Exp Type": "Grocery"}'
+**Run the Prediction file**
 
-**Model Details**
+python prediction.py
 
-The machine learning model is a simple neural network implemented in PyTorch. The model takes categorical features (City, Card Type, Exp Type) as input and predicts the suggested amount for spending.
+You can change the parameters in the given code to get an output based on your needs.
+
 
 **Limitations**
 
